@@ -46,8 +46,7 @@ class Daemonizer():
         os.remove(self.pid_file)
 
     def wait_for_signals(self):
-        while 1:
-            pass
+        self.proc.join()
 
     def sigterm_handle(self, signum, frame):
         self.hard_exit()
